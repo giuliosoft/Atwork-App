@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Atwork.App">
+    <Application.Resources>
+        <!--<ResourceDictionary Source="Themes/Default.xaml"/>-->
+        <ResourceDictionary>
+        <!-- Colors -->
+        <Color x:Key="AtworkLoginBackground">#F7F7F7</Color>
+        <Color x:Key="PrimaryLightBackground">#EDEDED</Color>
+        <Color x:Key="PrimaryDarkBackground">#242424</Color>
+        <Color x:Key="AtworkSplashBlue">#515AE0</Color>
+        <Color x:Key="LightTextColor">#fffff</Color>
+        <Color x:Key="DarkTextColor">#1D1D1B</Color>
+        <Color x:Key="HyperLink">#00000</Color>
+        <Color x:Key="BorderColor">#707070</Color>
+
+        <!-- button colors -->
+        <Color x:Key="ButtonBorderColor">#707070</Color>
+        <Color x:Key="ButtonTextColor">Black</Color>
+        <Color x:Key="ButtonBackgroundColor">Transparent</Color>
+        <Color x:Key="ButtonDarkBackgroundColor">#242424</Color>
+        <Color x:Key="ButtonDarkTextColor">#1D1D1B</Color>
+        <Color x:Key="ButtonDarkBorderColor">#707070</Color>
+
+        <!-- label colors -->
+        <Color x:Key="LabelBackground">Transparent</Color>
+        <Color x:Key="LabelTextColor">Black</Color>
+
+        <!-- entry colors -->
+        <Color x:Key="EntryBackground">Transparent</Color>
+        <Color x:Key="EntryTextColor">Black</Color>
+
+        <!-- Fonts --><!--
+        <Font x:Key="ButtonFont">Lato-Bold</Font>
+        <Font x:Key="LabelFont">Lato</Font>
+        <Font x:Key="EntryFont">Lato</Font>-->
+
+        <Style TargetType="StackLayout">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+
+        <Style x:Key="BoxLightBackground" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="#EDEDED"/>
+        </Style>
+
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="#EDEDED"/>
+        </Style>
+
+        <Style TargetType="ContentView">
+            <Setter Property="BackgroundColor" Value="#EDEDED"/>
+        </Style>
+
+        <!-- Label style -->
+        <Style x:Key="LightLabel" TargetType="Label">
+            <Setter Property="FontFamily" Value="Lato"/>
+            <Setter Property="TextColor" Value="#000000"/>
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+        </Style>
+
+        <!--Common buttons style transparent with dark text-->
+        <Style x:Key="LightButton" TargetType="Button">
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Lato-Bold"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="BorderWidth" Value="1"/>
+            <Setter Property="BorderColor" Value="#707070"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="MinimumHeightRequest" Value="20"/>
+        </Style>
+
+        <!--Common buttons style background color with light text-->
+        <Style x:Key="DarkButton" TargetType="Button">
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Lato-Bold"/>
+            <Setter Property="BackgroundColor" Value="#242424"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="BorderWidth" Value="1"/>
+            <Setter Property="BorderColor" Value="#707070"/>
+            <Setter Property="MinimumHeightRequest" Value="20"/>
+        </Style>
+
+        <Style x:Key="HeaderSmallButton" TargetType="Button">
+            <Setter Property="CornerRadius" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Lato-Bold"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="BorderWidth" Value="1"/>
+            <Setter Property="BorderColor" Value="#707070"/>
+        </Style>
+
+        <Style x:Key="LightEntry" TargetType="Entry">
+            <Setter Property="FontFamily" Value="Lato"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+        <Style x:Key="LightEditor" TargetType="Editor">
+            <Setter Property="FontFamily" Value="Lato"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+        <Style TargetType="CarouselView">
+
+        </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

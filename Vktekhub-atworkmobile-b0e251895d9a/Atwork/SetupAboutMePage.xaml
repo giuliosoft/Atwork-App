@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:views="clr-namespace:Atwork.Views"
+             x:Class="Atwork.SetupAboutMePage"
+             BackgroundColor="#EDEDED">
+    
+    <ContentPage.Content>
+
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+        
+
+        <Label Grid.Row="0"
+               Text="Can you tell us a bit about yourself?"
+                   Style="{StaticResource LightLabel}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+        <Editor Grid.Row="1"
+                Style="{Binding LightEditor}"
+                Placeholder="Start writing..."
+                IsSpellCheckEnabled="True"
+                FlowDirection="LeftToRight"
+                Keyboard="Text"
+                Text="{Binding AboutMe}"
+                />
+
+        <Button Grid.Row="2"
+                Text="Done"
+                Command="{Binding SaveAboutMeCommand}"
+                Style="{StaticResource LightButton}"
+                WidthRequest="200"/>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="Atwork.FeedTabbedPage"
+             BackgroundColor="#EDEDED">
+
+
+    <ContentPage Title="NEWS">
+
+    <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+            </Grid.RowDefinitions>
+
+            <BoxView BackgroundColor="Black"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                        HeightRequest="70"/>
+
+             <!--header avatar photo-->
+            <Image Source="Group 507.png"
+                        Margin="15,0"
+                        BackgroundColor="Black"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            HeightRequest="30"
+                        HorizontalOptions="Start"/>
+
+             <!--title--> 
+            <Label Text="NEWS"
+                        Style="{StaticResource LightLabel}"
+                        TextColor="White"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            HeightRequest="30"
+                        HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+             <!--my news button--> 
+            <Button x:Name="buttonAddNews"
+                    Text="+"
+                    Command = "{Binding AddNewsCommand}"
+                    BackgroundColor="White"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    BorderRadius="15"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Margin="0,0,15,0"/>
+
+             <!--news feed list view--> 
+            <listview:SfListView x:Name="NewsFeedListView" HeaderSize="0" FooterSize="0"
+                        ItemsSource="{Binding NewsFeedList}"
+                        Margin="10"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                                 ItemSize="300"
+                        HeightRequest="600">
+
+                <listview:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        
+                        <Grid Padding="5">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="5"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                             <!--avatar of person that created news--> 
+                            <Image Source="{Binding VolPicturePath}"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    HeightRequest="30"
+                                    HorizontalOptions="Start"/>
+
+                             <!--grid for full name and time age of post--> 
+                            <Grid Grid.Row="0" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Label Text="{Binding FullName}"
+                                            FontSize="12"
+                                            FontFamily="Lato"
+                                            TextColor="Black"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            HeightRequest="20"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalTextAlignment="Center"/>
+
+                                <Label Text="{Binding PostAging}"
+                                            FontFamily="Lato"
+                                            TextColor="Black"
+                                            FontSize="10"
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            HeightRequest="20"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalTextAlignment="Center"/>
+                            </Grid>
+
+
+                             <!--button with 3 vertical dots-->
+                            <Button x:Name="NewsElipsMenu"
+                                    ImageSource="VertElips.png"
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    HeightRequest="30"
+                                    HorizontalOptions="End"/>
+
+
+                            <Label Text="{Binding newsTitle}"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    Grid.Row="1"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    FontFamily="Lato"
+                                    TextColor="Black"/>
+
+                            <Label Text="{Binding SubstringNewsContent}"
+                                    FontSize="Small"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    Grid.Row="2"
+                                    FontFamily="Lato"
+                                    TextColor="Black"/>
+                                        
+                             <!--grid for image and side icons-->
+                            <Grid Grid.Row="3"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="AUTO"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="5"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                            
+                            <Image Source="{Binding NewsImagePath}"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="5"
+                                    Aspect="AspectFill"/>
+
+                                 <!--Source="https://engage.atwork.ai/upload/mobile/path-3.png"-->
+                             <!--heart likes icon--> 
+                                <Image  Source="https://engage.atwork.ai/upload/mobile/path-3.png"
+                                        Grid.Row ="1"
+                                        Grid.Column="1"
+                                        HorizontalOptions="Fill"
+                                        VerticalOptions="Fill"
+                                        WidthRequest="20"
+                                        HeightRequest="20"/>
+                                     
+                            <!--likes count-->
+                                <Label Text="0"
+                                        FontSize="Medium"
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="20"
+                                        HeightRequest="20"/>
+                                            
+                                 <!--comments icon--> 
+                                <Image Grid.Row ="3"
+                                        Grid.Column="1"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="20"
+                                        HeightRequest="20"/>
+
+                                <!--comments count-->
+                                <Label Text="0"
+                                        Grid.Row="4"
+                                        Grid.Column="1"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="20"
+                                        HeightRequest="20"/>
+
+                            </Grid>
+                                        
+                            <BoxView BackgroundColor="Black"
+                                        Grid.Row="4"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"
+                                    HorizontalOptions="FillAndExpand"
+                                    HeightRequest="1"/>
+
+                        </Grid>
+                                    
+                         
+                    </DataTemplate>
+                </listview:SfListView.ItemTemplate>
+            </listview:SfListView>
+
+        </Grid>
+
+        </ContentPage>
+
+    
+<ContentPage Title="ACTIVITY">
+
+    <!--<Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="AUTO"/>
+                            <RowDefinition Height="AUTO"/>
+                        </Grid.RowDefinitions>
+
+                        <BoxView BackgroundColor="Black"
+                                     Grid.Row="0"
+                                     Grid.Column="0"
+                                     Grid.ColumnSpan="3"
+                                     Grid.RowSpan="2"/>
+
+                         header photo
+                        <Image Source="Group 507.png"
+                                   Margin="5"
+                                   BackgroundColor="Black"
+                                     Grid.Row="0"
+                                     Grid.Column="0"
+                                     HeightRequest="30"
+                                  HorizontalOptions="Start"/>
+
+                         title
+                        <Label Text="Activities"
+                                    Style="{StaticResource LightLabel}"
+                                   TextColor="White"
+                                     Grid.Row="0"
+                                     Grid.Column="1"
+                                     HeightRequest="30"
+                                   HorizontalOptions="Center"
+                                    VerticalOptions="Center"/>
+
+                         my activities button
+                        <Button Text="MY Activity"
+                                    TextColor="Black"
+                                    BackgroundColor="White"
+                                    FontSize="9"
+                                     Grid.Row="0"
+                                     Grid.Column="2"
+                                     WidthRequest="20"
+                                    HeightRequest="40"
+                                    CornerRadius="20"
+                                    Margin="8"
+                                    />
+
+                         this is the collection of categories 
+                        <chipgroup:SfChipGroup
+		        ChipBackgroundColor="#FFEBEBEB"
+		        ChipTextColor="#FF202020"
+		        Type="Action">
+                <chipgroup:SfChipGroup.ChipLayout>
+                    <StackLayout Orientation="Horizontal"/>
+                </chipgroup:SfChipGroup.ChipLayout>
+                <chipgroup:SfChipGroup.Items>
+                    
+                </chipgroup:SfChipGroup.Items>
+            </chipgroup:SfChipGroup>
+
+
+                        
+                        activity feed list view
+                        <ListView x:Name="activityFeedView"
+                                  ItemsSource="{Binding ActivityFeedList}"
+                                                   Margin="10"
+                                                   Grid.Row="3"
+                                                   Grid.Column="0"
+                                                   Grid.ColumnSpan="3"
+                                                   HeightRequest="600">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <Grid Padding="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="AUTO"/>
+                                            <RowDefinition Height="AUTO"/>
+                                            <RowDefinition Height="AUTO"/>
+                                            <RowDefinition Height="AUTO"/>
+                                            <RowDefinition Height="AUTO"/>
+                                            <RowDefinition Height="AUTO"/>
+                                            <RowDefinition Height="AUTO"/>
+                                            <RowDefinition Height="AUTO"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Button Text="{Binding proCategoryName}"
+                                                            Style="{StaticResource LightButton}"
+                                                            Grid.Row="0"
+                                                            Grid.Column="0"
+                                                            Grid.ColumnSpan="2"
+                                                            WidthRequest="250"/>
+
+                                        <Label Text="{Binding proTitle}"
+                                                             Grid.Row="1"
+                                                             Grid.Column="0"
+                                                             Grid.ColumnSpan="3"
+                                                           FontFamily="Lato"
+                                                            TextColor="Black"/>
+
+                                         need icons here
+                                        <Label Text=""
+                                                             Grid.Row="2"
+                                                             Grid.Column="0"
+                                                             Grid.ColumnSpan="3"
+                                                           FontFamily="Lato"
+                                                       TextColor="Black"/>
+
+                                        <Image Source="{Binding ActivityPicturePath}"
+                                                        Grid.Row="3"
+                                                        Grid.Column="0"
+                                                        Grid.ColumnSpan="3"
+                                                        Aspect="AspectFill"/>
+
+
+                                        <BoxView Grid.Row="4"
+                                                            BackgroundColor="Beige"
+                                                            Grid.Column="0"
+                                                            Grid.ColumnSpan="3"
+                                                            CornerRadius="0,0,10,10"
+                                                         />
+
+                                        <Label Text="{Binding proPartner}"
+                                                       HorizontalTextAlignment="Center"
+                                                       FontSize="14"
+                                                                 Grid.Row="4"
+                                                                 Grid.Column="0"
+                                                                 Grid.ColumnSpan="3"
+                                                       FontFamily="Lato"
+                                                       TextColor="Black"/>
+
+
+                                        <BoxView Grid.Row="5"
+                                                            BackgroundColor="Beige"
+                                                            Grid.Column="0"
+                                                            Grid.ColumnSpan="3"
+                                                            CornerRadius="0,0,10,10"/>
+
+
+                                        <Label Text="{Binding proAddActivityDate}"
+                                                       HorizontalTextAlignment="Center"
+                                                       FontSize="14"
+                                                                 Grid.Row="5"
+                                                                 Grid.Column="0"
+                                                                 Grid.ColumnSpan="3"
+                                                       FontFamily="Lato"
+                                                       TextColor="Black"/>
+
+
+                                        <BoxView Grid.Row="6"
+                                                            BackgroundColor="Beige"
+                                                            Grid.Column="0"
+                                                            Grid.ColumnSpan="3"
+                                                            CornerRadius="0,0,10,10"/>
+
+                                        <Label Text="{Binding proAddActivity_StartTime}"
+                                                       HorizontalTextAlignment="Center"
+                                                       FontSize="14"
+                                                                 Grid.Row="6"
+                                                                 Grid.Column="0"
+                                                                 Grid.ColumnSpan="3"
+                                                       FontFamily="Lato"
+                                                       TextColor="Black"/>
+
+
+                                        <Label Text="12 joined"
+                                                       HorizontalTextAlignment="Center"
+                                                       FontSize="14"
+                                                                Grid.Row="7"
+                                                                Grid.Column="0"
+                                                                Grid.ColumnSpan="3"
+                                                       FontFamily="Lato"
+                                                       TextColor="Black"/>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </Grid>-->
+        
+</ContentPage>
+        
+
+</TabbedPage>

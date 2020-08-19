@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Atwork.EnableSecurityPage">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Column="0" Grid.Row="0">
+                
+                <Image HorizontalOptions="Center"
+                            Source="ATWORK_LOGO_GRAY.png"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1">
+                <Label Text="Would you like to enable Touch ID / Face ID for authentication?"
+                       Style="{DynamicResource LightLabel}"
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2">
+                <Button Text="Yes, enable"
+                        Style="{DynamicResource LightButton}"
+                        Command="{Binding EnableCommand}"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="150"/>
+
+                <Button Text="No, go to login"
+                        Style="{DynamicResource LightButton}"
+                        Command="{Binding CancelCommand}"
+                        VerticalOptions="CenterAndExpand"
+                        WidthRequest="150"/>
+            </StackLayout>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Atwork.ActivityJoinPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Thanks for signing up!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="You will receive a detailed activity description and itinerary 30 days prior to the event."
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Make sure to clear your schedule, the NGO is counting on you!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="What date do you plan to attend?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <!--<chipgroup:SfChipGroup
+		        ChipBackgroundColor="#FFEBEBEB"
+		        ChipTextColor="#FF202020"
+		        Type="Action">
+                <chipgroup:SfChipGroup.ChipLayout>
+                    <StackLayout Orientation="Horizontal"/>
+                </chipgroup:SfChipGroup.ChipLayout>
+                <chipgroup:SfChipGroup.Items>
+                    <chipgroup:SfChip Text="Chip1"/>
+                </chipgroup:SfChipGroup.Items>
+            </chipgroup:SfChipGroup>-->
+
+            <Label Text="How do you plan on getting there?"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <!--<chipgroup:SfChipGroup
+		        ChipBackgroundColor="#FFEBEBEB"
+		        ChipTextColor="#FF202020"
+		        Type="Action">
+                <chipgroup:SfChipGroup.ChipLayout>
+                    <StackLayout Orientation="Horizontal"/>
+                </chipgroup:SfChipGroup.ChipLayout>
+                <chipgroup:SfChipGroup.Items>
+                    <chipgroup:SfChip Text="Chip1"/>
+                </chipgroup:SfChipGroup.Items>
+            </chipgroup:SfChipGroup>-->
+
+            <Label Text="Food and drink requests:"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <!--<chipgroup:SfChipGroup
+		        ChipBackgroundColor="#FFEBEBEB"
+		        ChipTextColor="#FF202020"
+		        Type="Action">
+                <chipgroup:SfChipGroup.ChipLayout>
+                    <StackLayout Orientation="Horizontal"/>
+                </chipgroup:SfChipGroup.ChipLayout>
+                <chipgroup:SfChipGroup.Items>
+                    <chipgroup:SfChip Text="Chip1"/>
+                </chipgroup:SfChipGroup.Items>
+            </chipgroup:SfChipGroup>-->
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

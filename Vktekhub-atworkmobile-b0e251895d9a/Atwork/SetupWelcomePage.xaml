@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:Atwork.Views"
+             mc:Ignorable="d"
+             x:Class="Atwork.SetupWelcomePage"
+             BackgroundColor="#EDEDED">
+
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <Image HorizontalOptions="Center"
+                       x:Name="logoImage"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <Label Text="Wecome Setup"
+                       Style="{StaticResource LightLabel}"
+                       FontSize="28"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"/>
+
+                <Label Text="Set up your profile to choose your language, upload your picture, and let your team know more about you!"
+                       Style="{StaticResource LightLabel}"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" 
+                        LineBreakMode="WordWrap"
+                        HorizontalTextAlignment="Center"/>
+
+                <Label Text="If you want to use your phone's default language and get straight to the news, you can skip this process."
+                       Style="{StaticResource LightLabel}"
+                       VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="WordWrap"
+                        HorizontalTextAlignment="Center"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                        <Button x:Name="buttonBeginSetup"
+                                Command="{Binding BeginSetupCommand}"
+                                Grid.Column="0"
+                                Style="{StaticResource LightButton}"
+                                WidthRequest="150"
+                                Text="Begin Setup"
+                                />
+            
+                        <Button x:Name="buttonSkipSetup"
+                                Command="{Binding SkipSetupCommand}"
+                                Grid.Column="1"
+                                Style="{StaticResource LightButton}"
+                                WidthRequest="150"
+                                Text="Skip"
+                                />
+                    
+                </Grid>
+            </StackLayout>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

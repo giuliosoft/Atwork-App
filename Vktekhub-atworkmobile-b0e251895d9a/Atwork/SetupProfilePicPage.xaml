@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Atwork.SetupProfilePicPage"
+             xmlns:view="clr-namespace:Atwork.Views"
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
+             BackgroundColor="#EDEDED">
+
+    <navigationdrawer:SfNavigationDrawer x:Name="navDrawer">
+
+    <navigationdrawer:SfNavigationDrawer.ContentView>
+        
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+            <Label Text="Welcome to atwork!"
+                   Style="{StaticResource LightLabel}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                     />
+            <Label Text="What do you look like?"
+                   Style="{StaticResource LightLabel}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                     />
+            </StackLayout>
+
+            <Image Grid.Row="1"
+                   Source="Group650.png"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   VerticalOptions="Center"/>
+
+            <StackLayout Grid.Row="2">
+                <Button x:Name="buttonPickCameraRoll"
+                    Text="Choose From Camera Roll"
+                    Style="{StaticResource LightButton}"
+                    WidthRequest="250"
+                    Command="{Binding ChooseFromRollCommand}"/>
+
+            <Button Command="{Binding ChooseFromOursCommand}" 
+                             Text="Or Pick One of Ours"
+                             Style="{StaticResource LightButton}"
+                            WidthRequest="175"/>
+            </StackLayout>
+
+        </Grid>
+
+    </navigationdrawer:SfNavigationDrawer.ContentView>
+
+    <navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
+        <Label Text="Our Pictures"/>
+    </navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
+
+    <navigationdrawer:SfNavigationDrawer.DrawerContentView>
+        <ListView x:Name="PickOursListView"
+                    ItemsSource="{Binding AvatarList}">
+                
+        </ListView>
+    </navigationdrawer:SfNavigationDrawer.DrawerContentView>
+
+    </navigationdrawer:SfNavigationDrawer>
+</ContentPage>

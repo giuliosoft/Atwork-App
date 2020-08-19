@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Atwork.SignUpWithEmailClaimPage">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Column="0" Grid.Row="0">
+                <!--<Image HorizontalOptions="Center"
+                        Source="ATWORK_LOGO_GRAY.png"/>-->
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="1">
+                <Label Text="Name"
+                       Style="{StaticResource LightLabel}"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+           
+                <Entry x:Name="textName"
+                       Style="{StaticResource LightEntry}"
+                       IsReadOnly="True"
+                        Text="{Binding FullName}"/>
+
+                <Label Text="Email"
+                       Style="{StaticResource LightLabel}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+                <Entry x:Name="textEmail"
+                       Style="{StaticResource LightEntry}"
+                       IsReadOnly="True"
+                        Text="{Binding Email}"/>
+
+                <Label Text="Department"
+                       Style="{StaticResource LightLabel}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+                <Entry x:Name="textDepartment" 
+                       Style="{StaticResource LightEntry}"
+                       IsReadOnly="True"
+                       Text="{Binding Department}"/>
+
+                <Label Text="Job Title"
+                       Style="{StaticResource LightLabel}"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" />
+
+                <Entry x:Name="textJobTitle"
+                       Style="{StaticResource LightEntry}"
+                       IsReadOnly="True"
+                        Text="{Binding JobTitle}"/>
+            </StackLayout>
+
+            <!-- embedded grid for 2 columns -->
+            <StackLayout Grid.Column="0" Grid.Row="2">
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Column="0" 
+                    x:Name="buttonCancel"
+                    Style="{StaticResource LightButton}"
+                    Text="Cancel"
+                    Command="{Binding CancelCommand}"
+                        WidthRequest="150"/>
+
+                <Button Grid.Column="1" 
+                    x:Name="buttonClaimProfile"
+                    Style="{StaticResource LightButton}"
+                    Text="Claim Profile"
+                    Command="{Binding ClaimCommand}"
+                        WidthRequest="150"/>
+                
+            </Grid>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

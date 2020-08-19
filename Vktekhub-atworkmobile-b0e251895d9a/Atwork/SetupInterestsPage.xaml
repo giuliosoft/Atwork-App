@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:views="clr-namespace:Atwork.Views"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             x:Class="Atwork.SetupInterestsPage"
+             BackgroundColor="#EDEDED">
+
+    <!-- interest list model picker with auto complete and populate collection
+            control with selected interests -->
+    
+    <ContentPage.Content>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+                        
+            <Label Grid.Row="0"
+                   Style="{StaticResource LightLabel}"
+                   Text="Write down some interests!"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+            <syncfusion:SfAutoComplete x:Name="AutoCompleteList"
+                                       Grid.Row="2"
+                                       HeightRequest="30"
+                                       AutoCompleteMode="Suggest"
+                                       DisplayMemberPath="Interest"
+                                       DataSource="{Binding InterestsList}">
+
+                <syncfusion:SfAutoComplete.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Interest}"/>
+                    </DataTemplate>
+                </syncfusion:SfAutoComplete.ItemTemplate>
+
+            </syncfusion:SfAutoComplete>
+
+            <Button Text="Done"
+                    Grid.Row="1"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    WidthRequest="150"
+                    HeightRequest="40"
+                    CornerRadius="16"
+                    FontAttributes="Bold"
+                    FontFamily="Lato-Bold"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    BorderWidth="1"
+                    BorderColor="#707070"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

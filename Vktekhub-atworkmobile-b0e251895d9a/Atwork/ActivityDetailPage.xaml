@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:views="clr-namespace:Atwork.Views"
+             xmlns:local="clr-namespace:Atwork.ViewModels"
+             x:Class="Atwork.ActivityDetailPage"
+             Title="Activity">
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!--TODO a chip or circular label to show a activity category-->
+            
+            <Label x:Name="labelNumberJoined" Text="{Binding NumberJoined}"/>
+
+            <Label x:Name="labelDescription" Text="{Binding Description}"/>
+
+            <!-- this is the collection of categories -->
+            <!--<chipgroup:SfChipGroup
+		        ChipBackgroundColor="#FFEBEBEB"
+		        ChipTextColor="#FF202020"
+		        Type="Action">
+                <chipgroup:SfChipGroup.ChipLayout>
+                    <StackLayout Orientation="Horizontal"/>
+                </chipgroup:SfChipGroup.ChipLayout>
+                <chipgroup:SfChipGroup.Items>
+                    
+                </chipgroup:SfChipGroup.Items>
+            </chipgroup:SfChipGroup>-->
+
+            <Label Text="ABOUT THIS ACTIVITY"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Min. Group Size:"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding MinGroupSize}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Max. Group Size:"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding MaxGroupSize}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Time:"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding ActivityTime}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Covered by company:"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding CoveredByCompany}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Price:"/>
+                <Label Grid.Row="4" Grid.Column="1" Text="{Binding Price}"/>
+
+                <Label Grid.Row="5" Grid.Column="0" Text="Language:"/>
+                <Label Grid.Row="5" Grid.Column="1" Text="{Binding Language}"/>
+
+                <Label Grid.Row="6" Grid.Column="0" Text="Other dates:"/>
+                <Label Grid.Row="6" Grid.Column="1" Text="{Binding OtherDates}"/>
+
+            </Grid>
+            
+            <Label Text="Activity Type"/>
+            <Label Text="{Binding ActivityType}"/>
+            
+            <Label Text="Skills"/>
+            <Label Text="{Binding Skills}"/>
+
+            <Label Text="Goal"/>
+            <Label Text="{Binding Goal}"/>
+
+            <Label Text="Special Requirements"/>
+            <Label Text="{Binding SpecialRequirements}"/>
+            
+            <Image Source="dividing line" />
+
+            <Label Text="ABOUT THE ORGANIZATION"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Name:"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding OrgName}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Address:"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding OrgAddress}"/>
+
+                <Label Grid.Row="2" Grid.Column="1" Text="More Information"/>
+
+            </Grid>
+
+            <Button Text="CONTACT" Command="{Binding }"/>
+            <Button Text="SHARE THIS ACTIVITY!" Command="{Binding }"/>
+            <Button Text="Delete Activity" Command="{Binding }"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

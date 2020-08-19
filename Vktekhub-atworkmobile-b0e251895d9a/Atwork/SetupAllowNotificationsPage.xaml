@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:views="clr-namespace:Atwork.Views"
+             x:Class="Atwork.SetupAllowNotificationsPage">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+      
+            <Label Grid.Row="0"
+                   Text="Almost done!"
+                   Style="{StaticResource LightLabel}"
+                    VerticalOptions="CenterAndExpand" />
+
+            <StackLayout Grid.Row="1">
+
+                <Button x:Name="buttonAllowNotifications"
+                        Style="{StaticResource LightButton}"
+                        Text="Allow Notifications"
+                        Command="{Binding RequestNotificationPermissionCommand}"
+                        HeightRequest="30"
+                        />
+
+
+                <Label Text="Allow notifications if you wish to receive updates on subscribed activities."
+                        Style="{StaticResource LightLabel}"/>
+
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

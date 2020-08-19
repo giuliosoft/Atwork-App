@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Atwork.DisclosurePage">
+    <ContentPage.Content>
+
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" HorizontalOptions="Center"
+                    Source="ATWORK_LOGO_GRAY.png"/>
+       
+        <StackLayout Grid.Column="0" Grid.Row="1">
+            <Label Text="Please review and accept our disclaimer"
+                   Style="{StaticResource LightLabel}"/>
+
+            <Editor Text="{Binding DisclosureText}"
+                    IsReadOnly="True"
+                   Style="{StaticResource LightEditor}"/>
+        </StackLayout>
+        
+        <Button Grid.Row="2"
+                Text="Accept Disclaimer"
+                Style="{StaticResource LightButton}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="200"/>
+       
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

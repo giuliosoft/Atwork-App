@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Atwork.NewsPostPage"
+             BackgroundColor="#EDEDED">
+    <ContentPage.Content>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="175"/>
+                <RowDefinition Height="125"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- header avatar photo-->
+            <Image Source="Group 507.png"
+                   x:Name="AvatarImage"
+                    Margin="15,0"
+                    BackgroundColor="Black"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"/>
+
+            <!--<BoxView BackgroundColor="AliceBlue"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="3"/>-->
+
+            <!-- header name -->
+            <Label Text="{Binding FullName}"
+                    TextColor="White"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="30"
+                    HorizontalOptions="Center"/>
+
+            <!-- header number of likes -->
+            <Image x:Name="LikesImage"
+                   Grid.Row="0"
+                   Grid.Column="3"
+                   HeightRequest="30"
+                   HorizontalOptions="End"/>
+
+            
+            <Label Text="{Binding PostTitle}"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   HeightRequest="40"/>
+
+            <Image Source="{Binding PostImage}"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"/>
+
+            <Editor Text="{Binding PostContent}"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    IsReadOnly="True"/>
+
+            <Button Text="FileName"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Style="{StaticResource DarkButton}"
+                    Command="{Binding OpenFile}"/>
+            
+            <!-- comments view control here -->
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
